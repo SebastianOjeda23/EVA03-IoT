@@ -15,24 +15,24 @@ public class MainActivity4 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main4);
 
-        // Referencia a ViewPager2 y TabLayout desde el XML
+
         viewPager = findViewById(R.id.viewPager);
         tabLayout = findViewById(R.id.tabLayout);
 
-        // Crear el adaptador para ViewPager2
+
         ViewPagerAdapter adapter = new ViewPagerAdapter(this);
         viewPager.setAdapter(adapter);
 
-        // Conectar el TabLayout con ViewPager2 mediante TabLayoutMediator
+
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
-                    // Títulos de las pestañas
+
                     switch (position) {
                         case 0:
-                            tab.setText("Grupos Creados");
+                            tab.setText("Grupos Unidos");
                             break;
                         case 1:
-                            tab.setText("Grupos Unidos");
+                            tab.setText("Grupos Creados");
                             break;
                     }
                 }).attach();

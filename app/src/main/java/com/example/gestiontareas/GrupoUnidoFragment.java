@@ -36,7 +36,6 @@ public class GrupoUnidoFragment extends Fragment {
         groupAdapter = new GroupAdapter(getContext(), joinedGroups);
         joinedGroupListView.setAdapter(groupAdapter);
 
-        // Aquí no cargamos grupos de Firestore, comienza vacío
 
         joinGroupButton.setOnClickListener(v -> showJoinGroupDialog());
 
@@ -47,11 +46,10 @@ public class GrupoUnidoFragment extends Fragment {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
         builder.setTitle("Unirse a Grupo");
 
-        // Inflar el layout para el diálogo
+
         View dialogView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_join_group, null);
         builder.setView(dialogView);
 
-        // Obtener las vistas
         TextInputEditText groupCodeInput = dialogView.findViewById(R.id.editTextGroupCode);
 
         builder.setPositiveButton("Unirse", (dialog, which) -> {

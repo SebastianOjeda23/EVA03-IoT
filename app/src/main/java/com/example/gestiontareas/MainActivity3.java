@@ -32,10 +32,9 @@ public class MainActivity3 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main3);
 
-        // Inicializa Firebase
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();  // Inicializa Firestore
+        db = FirebaseFirestore.getInstance();
 
         Button volverButton = findViewById(R.id.Volver2);
         Button inicioSesionButton = findViewById(R.id.InicioSesion);
@@ -58,7 +57,7 @@ public class MainActivity3 extends AppCompatActivity {
                 String password = passwordEditText.getText().toString().trim();
 
                 if (!email.isEmpty() && !password.isEmpty()) {
-                    // Iniciar sesión con Firebase Authentication
+
                     signInUser(email, password);
                 } else {
                     Toast.makeText(MainActivity3.this, "Por favor, completa todos los campos", Toast.LENGTH_SHORT).show();
@@ -73,11 +72,11 @@ public class MainActivity3 extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Inicio de sesión exitoso
+
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(MainActivity3.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
 
-                            // Cargar los grupos a los que se ha unido el usuario
+
                             loadUserGroups(user.getUid());
 
                         } else {
@@ -90,7 +89,7 @@ public class MainActivity3 extends AppCompatActivity {
     }
 
     private void loadUserGroups(String userId) {
-        // Obtener los grupos a los que se ha unido el usuario desde Firestore
+
         db.collection("users").document(userId).get().addOnSuccessListener(documentSnapshot -> {
             if (documentSnapshot.exists()) {
                 List<String> groupIds = (List<String>) documentSnapshot.get("groups");

@@ -6,14 +6,14 @@ public class Task {
     private String description;
     private boolean isCompleted;
 
-    // Constructor para crear una nueva tarea
+
     public Task(String name, String description, boolean isCompleted) {
         this.name = name;
         this.description = description;
         this.isCompleted = isCompleted;
     }
 
-    // Constructor para recuperar tareas de Firestore
+
     public Task(String id, String name, String description, boolean isCompleted) {
         this.id = id;
         this.name = name;
@@ -21,7 +21,7 @@ public class Task {
         this.isCompleted = isCompleted;
     }
 
-    // Getters y setters
+
     public String getId() {
         return id;
     }

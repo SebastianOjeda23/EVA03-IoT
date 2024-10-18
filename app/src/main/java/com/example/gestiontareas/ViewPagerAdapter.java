@@ -15,11 +15,11 @@ public class ViewPagerAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position) {
             case 0:
-                return new GrupoCreadoFragment(); // Fragmento de grupos creados
+                return new GrupoCreadoFragment();
             case 1:
-                return new GrupoUnidoFragment(); // Fragmento de grupos unidos
+                return new GrupoUnidoFragment();
             default:
-                return new GrupoCreadoFragment(); // Por defecto
+                return new GrupoCreadoFragment();
         }
     }
 
