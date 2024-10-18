@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "56640158711",
+    "project_id": "fir-eva03",
+    "storage_bucket": "fir-eva03.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:56640158711:android:1345f7ad33f8c498f7ccf2",
+        "android_client_info": {
+          "package_name": "com.example.gestiontareas"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOWV1sFv3yhvv8R9xadKAfVNZIiKpTC04"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
